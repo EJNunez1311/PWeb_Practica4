@@ -21,6 +21,12 @@ dependencies {
     compile 'com.sparkjava:spark-template-thymeleaf:2.5.5'  //Thymeleaf
     compile 'org.slf4j:slf4j-simple:1.7.21'
 }
+
+shadowJar {
+    baseName = 'PWeb_Practica2'
+    classifier = null
+    version = null
+}
 task stage {
-    dependsOn installDist
+    dependsOn shadowJar
 }
